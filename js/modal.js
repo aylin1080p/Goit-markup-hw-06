@@ -1,33 +1,70 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const openBtn = document.querySelector("[data-modal-open]");
-  const closeBtn = document.querySelector("[data-modal-close]");
+  /* ================= MOBILE MENU ================= */
+
+  const menuOpenBtn = document.querySelector("[data-menu-open]");
+  const menuCloseBtn = document.querySelector("[data-menu-close]");
+  const mobileMenu = document.querySelector("[data-menu]");
+
+  if (menuOpenBtn && mobileMenu) {
+    menuOpenBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("is-open");
+    });
+  }
+
+  if (menuCloseBtn && mobileMenu) {
+    menuCloseBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("is-open");
+    });
+  }
+
+
+  /* ================= MODAL ================= */
+
+  const modalOpenBtns = document.querySelectorAll("[data-modal-open]");
+  const modalCloseBtn = document.querySelector("[data-modal-close]");
   const backdrop = document.querySelector("[data-modal]");
 
-  if (!openBtn || !closeBtn || !backdrop) return;
+  if (!backdrop) return;
 
-  // OPEN
-  openBtn.addEventListener("click", function (event) {
-    event.preventDefault();
+
+  function openModal() {
     backdrop.classList.remove("is-hidden");
-  });
 
-  // CLOSE BUTTON
-  closeBtn.addEventListener("click", function () {
+    // Mobile menu açıksa kapat
+    if (mobileMenu) {
+      mobileMenu.classList.remove("is-open");
+    }
+  }
+
+  function closeModal() {
     backdrop.classList.add("is-hidden");
+  }
+
+
+  modalOpenBtns.forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      openModal();
+    });
   });
 
-  // BACKDROP CLICK
-  backdrop.addEventListener("click", function (event) {
-    if (event.target === backdrop) {
-      backdrop.classList.add("is-hidden");
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener("click", closeModal);
+  }
+
+
+  backdrop.addEventListener("click", function (e) {
+    if (e.target === backdrop) {
+      closeModal();
     }
   });
 
-  // ESC CLOSE
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      backdrop.classList.add("is-hidden");
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeModal();
     }
   });
 
