@@ -1,5 +1,17 @@
 /* ===== RESET / BASE ===== */
 
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -37,9 +49,10 @@ img {
 /* ===== CONTAINER ===== */
 
 .container {
-  width: 1158px;
+  width: 100%;
+  max-width: 320px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 
 /* ===== SECTION ===== */
@@ -78,6 +91,8 @@ img {
 .menu-nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .logo {
@@ -791,3 +806,159 @@ img {
 }
 
 /* ===== END ===== */
+@media screen and (max-width: 767px) {
+  /* HEADER */
+
+  .header-container {
+    padding: 16px 0;
+  }
+  .menu-link,
+  .contacts {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    padding: 8px;
+  }
+
+  /* HERO */
+
+  .hero {
+    padding: 112px 0;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    line-height: 40px;
+    max-width: 288px;
+    margin-bottom: 72px;
+  }
+
+  /* FEATURES */
+
+  .features-list {
+    flex-direction: column;
+    gap: 72px;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
+
+  .feature-icon-wrapper {
+    display: none;
+  }
+
+  /* TEAM */
+
+  .team-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 264px;
+  }
+
+  /* PORTFOLIO */
+
+  .portfolio-list {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .portfolio-card {
+    width: 100%;
+  }
+
+  /* FOOTER */
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 72px;
+  }
+
+  .footer-subscribe-form {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-subscribe-input {
+    width: 100%;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+
+  .feature-card {
+    max-width: 288px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+  /* HEADER */
+
+  .contacts {
+    display: none;
+  }
+
+  /* FEATURES */
+
+  .features-list {
+    flex-wrap: wrap;
+  }
+
+  .feature-card {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .feature-icon-wrapper {
+    display: none;
+  }
+
+  /* TEAM */
+
+  .team-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .team-card {
+    width: calc((100% - 24px) / 2);
+  }
+
+  /* PORTFOLIO */
+
+  .portfolio-card {
+    width: calc((100% - 24px) / 2);
+  }
+
+  /* FOOTER */
+
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 72px;
+  }
+}
+
+.menu-toggle {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .menu-toggle {
+    display: block;
+  }
+}
