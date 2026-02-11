@@ -812,6 +812,11 @@ img {
 @media screen and (max-width: 767px) {
   /* HEADER */
 
+  .menu-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .header-container {
     padding: 16px 0;
   }
@@ -908,6 +913,19 @@ img {
   .footer-subscribe-button {
     align-self: center;
     width: auto;
+  }
+  .footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .footer-social-title {
+    text-align: center;
+  }
+
+  .footer-social-list {
+    justify-content: center;
   }
 }
 
