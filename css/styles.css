@@ -85,7 +85,6 @@ img {
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .menu-nav {
@@ -254,10 +253,6 @@ img {
 .features-list {
   display: flex;
   gap: 24px;
-}
-
-.features-list li {
-  flex: 1;
 }
 
 .features-list .card-title {
@@ -1199,38 +1194,90 @@ img {
 /*desktop scrreeeen burada basliyor */
 
 @media screen and (min-width: 1158px) {
-  /* container zaten flex */
   .header-container {
-    display: flex;
-    align-items: center;
+    max-width: 1440px;
+    padding-left: 156px;
+    padding-right: 156px;
   }
 
-  /* nav artık tam genişlik kaplamasın */
+  /* NAV GENİŞLESİN */
   .menu-nav {
     display: flex;
     align-items: center;
-    width: auto;
+    flex-grow: 1;
   }
 
-  /* LOGO SOL */
+  /* LOGO SOLDA */
   .logo {
-    margin-right: 120px;
+    margin-right: 76px;
   }
 
-  /* MENU ORTAYA YAKIN */
+  /* MENU NORMAL */
   .menu-link {
     display: flex;
     gap: 40px;
   }
 
-  /* CONTACT SAĞ */
+  /* CONTACTS SAĞA GİTSİN */
   .contacts {
     margin-left: auto;
   }
 
-  /* contact text tek satır */
   .contact-list {
     display: flex;
     gap: 40px;
   }
+
+  .hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features-list {
+    display: grid;
+    grid-template-columns: repeat(4, 270px);
+    justify-content: center;
+    gap: 24px;
+  }
+  .team-list {
+    display: grid;
+    grid-template-columns: repeat(4, 264px);
+    justify-content: center;
+    gap: 24px;
+  }
+.portfolio-list {
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  justify-content: center;
+  gap: 48px 24px;
 }
+
+.portfolio-card {
+  width: 360px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 264px 208px 453px;
+  justify-content: center;
+  gap: 0 120px;
+}
+
+.footer-subscribe-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-subscribe-button {
+  height: 40px;
+}
+.footer-subscribe-input {
+  width: 264px;
+}
+
+
+
+} /* desktop goruntuleme bitti /
