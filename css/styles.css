@@ -1,16 +1,5 @@
 /* ===== RESET / BASE ===== */
 
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media screen and (min-width: 1158px) {
-  .container {
-    max-width: 1158px;
-  }
-}
 
 *,
 *::before,
@@ -1055,7 +1044,8 @@ img {
     flex-wrap: wrap;
     align-items: baseline;
     gap: 72px 24px;
-  }
+    padding-left: 108px; /* İçerikleri sağa iterek ortalı görünmesini sağlar */
+}
 
   .footer-subscribe-form {
     flex-direction: row;
@@ -1194,6 +1184,9 @@ img {
 /*desktop scrreeeen burada basliyor */
 
 @media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+  }
   .header-container {
     max-width: 1440px;
     padding-left: 156px;
@@ -1262,6 +1255,7 @@ img {
   grid-template-columns: 264px 208px 453px;
   justify-content: center;
   gap: 0 120px;
+  padding-left: 0;
 }
 
 .footer-subscribe-form {
